@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild, Type, ComponentFactoryResolver } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Type, ComponentFactoryResolver,AfterViewInit } from '@angular/core';
 import { TabContainerDirective } from './../directives/tab-container.directive';
 
 /**
