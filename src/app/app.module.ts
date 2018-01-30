@@ -4,12 +4,10 @@ import { NgZorroAntdModule } from 'ng-zorro-antd';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { TabsetComponent } from './tabset/tabset.component';
-import { TabTplComponent } from './tab-tpl/tab-tpl.component';
+import { TabsetComponent } from './core/tabset/tabset.component';
+import { TabTplComponent } from './core/tab-tpl/tab-tpl.component';
 import { TabContainerDirective } from './directives/tab-container.directive';
-import { DynamicTest1Component } from './dynamic-test1/dynamic-test1.component';
-import { DynamicTest2Component } from './dynamic-test2/dynamic-test2.component';
-import { DynamicTest3Component } from './dynamic-test3/dynamic-test3.component';
+import { DynamicTest1Component, DynamicTest2Component, DynamicTest3Component } from './components';
 
 
 @NgModule({
@@ -27,7 +25,7 @@ import { DynamicTest3Component } from './dynamic-test3/dynamic-test3.component';
     NgZorroAntdModule.forRoot(),
     BrowserAnimationsModule
   ],
-  entryComponents:[
+  entryComponents: [
     DynamicTest1Component,
     DynamicTest2Component,
     DynamicTest3Component

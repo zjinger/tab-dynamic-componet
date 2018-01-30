@@ -1,7 +1,5 @@
-import { DynamicTest1Component } from './../dynamic-test1/dynamic-test1.component';
-import { DynamicTest2Component } from './../dynamic-test2/dynamic-test2.component';
-import { DynamicTest3Component } from './../dynamic-test3/dynamic-test3.component';
-import { TabItem } from './../model/tab-item';
+import { DynamicTest1Component, DynamicTest2Component, DynamicTest3Component } from '../../components';
+import { TabItem } from './../../model/tab-item';
 import { Component, OnInit, Input, Type } from '@angular/core';
 
 @Component({
@@ -73,9 +71,16 @@ export class TabsetComponent implements OnInit {
     } else if (value == "test2") {
       tab = this.generator(value, DynamicTest2Component);
     } else if (value == "test3") {
+      let data = {
+        id: 1, name: '张三', params: {
+          address: '广东省深圳市',
+          postCode: '000000'
+        }
+      };
       tab = this.generator(value, DynamicTest3Component);
+      tab.data = data;
     }
-    if(index==-1){ 
+    if (index == -1) {
       this.tabList.push(tab);
     }
     this.currentIndex = this.getCurrentIndex(tab);
