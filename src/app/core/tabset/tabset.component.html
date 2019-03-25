@@ -9,13 +9,17 @@
   <button nz-button [nzType]="'primary'" (click)="addTab('test3')">
     <span>test3</span>
   </button>
+  <button nz-button [nzType]="'primary'" (click)="addTab('test4')">
+    <span>test4</span>
+  </button>
 </div>
-<nz-tabset style="margin:10px;" [nzAnimated]="true" (nzSelectChange)="nzSelectChange($event)" [nzShowPagination]="true" [nzSelectedIndex]="currentIndex" [nzType]="'card'">
+<nz-tabset style="margin:10px;" [nzAnimated]="true" (nzSelectChange)="nzSelectChange($event)" [nzShowPagination]="true"
+  [nzSelectedIndex]="currentIndex" [nzType]="'card'">
   <nz-tab *ngFor="let tab of tabList">
-    <ng-template #nzTabHeading>
+    <ng-template #nzTabHeading="">
       <div>
         {{tab.title }}
-        <i *ngIf="!tab.unremovable" class="fa fa-times-circle" (click)="onTabClose(tab)"></i>
+        <i class="fa fa-times-circle" *ngIf="!tab.unremovable" (click)="onTabClose(tab)"></i>
       </div>
     </ng-template>
     <!--动态组件-->

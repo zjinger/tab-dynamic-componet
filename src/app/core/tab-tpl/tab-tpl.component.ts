@@ -27,7 +27,9 @@ export class TabTplComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
     // this.loadComponent();
-    this.loadAndPassParams();
+    setTimeout(() => {
+      this.loadAndPassParams();
+    });
   }
 
 

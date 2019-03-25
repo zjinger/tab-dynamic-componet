@@ -35,7 +35,7 @@ export class TabsetComponent implements OnInit {
   }
   /**
    * tab发生改变
-   * @param  
+   * @param
    */
   nzSelectChange($event) {
     this.currentIndex = $event.index;
@@ -66,11 +66,12 @@ export class TabsetComponent implements OnInit {
       return ele.title == value;
     })
     let tab: TabItem = new TabItem();
-    if (value == "test1") {
+    // tslint:disable-next-line: triple-equals
+    if (value == 'test1') {
       tab = this.generator(value, DynamicTest1Component);
-    } else if (value == "test2") {
+    } else if (value == 'test2') {
       tab = this.generator(value, DynamicTest2Component);
-    } else if (value == "test3") {
+    } else if (value == 'test3') {
       let data = {
         id: 1, name: '张三', params: {
           address: '广东省深圳市',
@@ -79,7 +80,18 @@ export class TabsetComponent implements OnInit {
       };
       tab = this.generator(value, DynamicTest3Component);
       tab.data = data;
+    } else if (value == 'test4') {
+      let data = {
+        id: 1, name: '李四', params: {
+          address: '广东省东莞市',
+          postCode: '10000'
+        }
+      };
+      tab = this.generator(value, DynamicTest3Component);
+      tab.data = data;
     }
+
+
     if (index == -1) {
       this.tabList.push(tab);
     }
